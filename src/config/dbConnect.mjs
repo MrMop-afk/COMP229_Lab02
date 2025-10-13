@@ -1,14 +1,13 @@
 import mongoose from 'mongoose';
 
-export function connectToDatabase() {
-  mongoose.connect('mongodb+srv://admin_db_user:awbVJ79DI7i64Scu@cluster003.oviumia.mongodb.net/products?retryWrites=true&w=majority&appName=Cluster003');
+const connectDB = async () => {
+  try {
+    await mongoose.connect('mongodb+srv://mohammed94175_db_user:Abdullah78694175!@portfolio.nskxdsg.mongodb.net/');
+    console.log(' MongoDB connected');
+  } catch (err) {
+    console.error('  MongoDB connection error:', err.message);
+    process.exit(1);
+  }
+};
 
-  const mongodb = mongoose.connection;
-
-  mongodb.on('error', console.error.bind(console, 'Connection Error: '));
-  mongodb.once('open', () => {
-    console.log('====> Connected to MongoDb.');
-  });
-
-  return mongodb;
-}
+export default connectDB;
