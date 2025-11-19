@@ -1,5 +1,6 @@
 import express from 'express';
 import * as ctrl from '../Controller/contacts.mjs';
+import { authenticate } from '../Middleware/auth.mjs';
 
 const router = express.Router();
 

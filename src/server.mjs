@@ -9,6 +9,8 @@ import contactsRouter from './View/contacts.mjs';
 import usersRouter from './View/users.mjs';
 import projectsRouter from './View/projects.mjs';
 import servicesRouter from './View/services.mjs';   
+import authRoutes from './Routes/auth.mjs';
+
 
 const app = express();
 
@@ -22,6 +24,7 @@ const PORT = process.env.PORT || 3000;
 const db = connectDB();
 
 app.use('/', indexRouter);
+app.use('/api/auth', authRoutes);
 app.use('/api/contacts', contactsRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/projects', projectsRouter);
