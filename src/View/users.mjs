@@ -6,7 +6,6 @@ const router = express.Router();
 
 router.route('/')
   .get(ctrl.getAll)
-  .post(authenticate,ctrl.create)
   .delete(authenticate,ctrl.removeAll);
 
 router.route('/:id')
