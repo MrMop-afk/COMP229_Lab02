@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb+srv://mohammed94175_db_user:Abdullah78694175!@portfolio.nskxdsg.mongodb.net/');
+    await mongoose.connect(process.env.ATLASDB);
     console.log(' MongoDB connected');
   } catch (err) {
     console.error('  MongoDB connection error:', err.message);

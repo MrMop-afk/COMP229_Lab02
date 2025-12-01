@@ -6,12 +6,12 @@ const router = express.Router();
 
 router.route('/')
   .get(ctrl.getAll)
-  .post(ctrl.create)
-  .delete(ctrl.removeAll);
+  .post(authenticate, ctrl.create)
+  .delete(authenticate, ctrl.removeAll);
 
 router.route('/:id')
   .get(ctrl.getById)
-  .put(ctrl.update)
-  .delete(ctrl.removeOne);
+  .put(authenticate, ctrl.update)
+  .delete(authenticate, ctrl.removeOne);
 
 export default router;

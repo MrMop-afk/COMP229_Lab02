@@ -1,3 +1,9 @@
+import dotenv from 'dotenv';
+dotenv.config();
+console.log('Environment Variables:', {
+  JWT_SECRET: process.env.JWT_SECRET,
+  ATLASDB: process.env.ATLASDB
+});
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -9,7 +15,7 @@ import contactsRouter from './View/contacts.mjs';
 import usersRouter from './View/users.mjs';
 import projectsRouter from './View/projects.mjs';
 import servicesRouter from './View/services.mjs';   
-import authRoutes from './Routes/auth.mjs';
+import authRoutes from './View/auth.mjs';
 
 
 const app = express();
